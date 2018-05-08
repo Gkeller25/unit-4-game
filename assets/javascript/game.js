@@ -64,8 +64,7 @@ if(mainNumber < totalScore){
 else if(mainNumber === totalScore){
     alert("You Win!");
     wins += 1;
-    $("#wins").text("Wins: " + wins);
-    
+    $("#wins").text("Wins: " + wins);   
     gameOver = true;
 }
 if(gameOver == true) {
