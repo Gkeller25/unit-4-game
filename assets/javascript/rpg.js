@@ -1,15 +1,16 @@
 $(document).ready(function() {
-var luke = {name:"Luke Skywalker", side:"light", HP:130, atkPwr:10, counterPwr:6,};
-var yoda = {name:"Yoda", side:"light", HP:180, atkPwr:10, counterPwr:6,};
-var emperor = {name:"Emperor Palpatine", side:"dark", HP:180, atkPwr:10, counterPwr:6,};
-var vader = {name:"Darth Vader", side:"dark", HP:170, atkPwr:10, counterPwr:6,};
-var dooku = {name:"Count Dooku", side:"dark", HP:150, atkPwr:10, counterPwr:6,};
-var chewie = {name:"Chewbacca", side:"light", HP:120, atkPwr:10, counterPwr:6,};
+var luke = {name:"Luke Skywalker", side:"light", HP:130, atkPwr:10, counterPwr:12,};
+var yoda = {name:"Yoda", side:"light", HP:180, atkPwr:10, counterPwr:16,};
+var emperor = {name:"Emperor Palpatine", side:"dark", HP:180, atkPwr:10, counterPwr:16,};
+var vader = {name:"Darth Vader", side:"dark", HP:170, atkPwr:10, counterPwr:12,};
+var dooku = {name:"Count Dooku", side:"dark", HP:150, atkPwr:10, counterPwr:8,};
+var chewie = {name:"Chewbacca", side:"light", HP:120, atkPwr:10, counterPwr:8,};
 var chosenCharacter = "";
 var playerReady = false;
 var opponentReady = false;
 var chosenOpponent = ""; 
-
+var opponentsLeft = 3;
+var gameOver = false;
 
 //set player stats
 $("#chewieFnSel").text(chewie.name);
@@ -30,9 +31,6 @@ $("#vaderHpSel").html(vader.HP);
 $("#emperorFnSel").text(emperor.name);
 $("#emperorHpSel").html(emperor.HP);
 
-if(playerReady = true){
-
-};
 
 //Pick players which determines Opponents....Keep opponents from changing during fight
 //Player Selection Chewbacca.....filter light characters out
@@ -47,7 +45,7 @@ $("#chewie-select").on("click", function(){
     $("#vaderHpOp").html(vader.HP);
     $("#emperorFnOp").text(emperor.name);
     $("#emperorHpOp").html(emperor.HP);
- console.log(chosenCharacter);
+ console.log(on("click"));
  playerReady = true;
 });
  
@@ -143,6 +141,7 @@ $("#chewie-opponent").on("click", function(){
     $("#chewieFnDe").text(chewie.name);
     $("#chewieHpDe").html(chewie.HP);
     chosenOpponent = chewie;
+    $(".opponent").attr("disabled", "true");
    opponentReady = true;
 });
 
@@ -159,6 +158,7 @@ $("#luke-opponent").on("click", function(){
     $("#lukeFnDe").text(luke.name);
     $("#lukeHpDe").html(luke.HP);
     chosenOpponent = luke;
+    $(".opponent").attr("disabled", "true");
     opponentReady = true;
 });
 
@@ -175,6 +175,7 @@ $("#yoda-opponent").on("click", function(){
     $("#yodaFnDe").text(yoda.name);
     $("#yodaHpDe").html(yoda.HP);
 chosenOpponent = yoda;
+$(".opponent").attr("disabled", "true");
     opponentReady = true;
 });
 
@@ -191,6 +192,7 @@ $("#dooku-opponent").on("click", function(){
     $("#dookuFnDe").text(dooku.name);
     $("#dookuHpDe").html(dooku.HP);
     chosenOpponent = dooku;
+    $(".opponent").attr("disabled", "true");
     opponentReady = true;
 });
 
@@ -207,6 +209,7 @@ $("#vader-opponent").on("click", function(){
     $("#vaderFnDe").text(vader.name);
     $("#vaderHpDe").html(vader.HP);
     chosenOpponent = vader;
+    $(".opponent").attr("disabled", "true");
     opponentReady = true;
 });
 
@@ -223,20 +226,73 @@ $("#emperor-opponent").on("click", function(){
     $("#emperorFnDe").html(emperor.name);
     $("#emperorHpDe").html(emperor.HP);
     chosenOpponent = emperor;
+    $(".opponent").attr("disabled", "true");
     opponentReady = true;
+    console.log(opponentReady);
+    console.log($(".opponent").css("display"));
 });
- while(opponentReady = true){
-    $("button.opponent").attr("disabled", "true");
- };
+console.log($(".opponent").css("display"));
 //fight
-if(chosenOpponent = true){
-$("#attack").on("click", function(){chosenOpponent.HP -= chosenCharacter.atkPwr;
+console.log(chosenCharacter);
+console.log(chosenOpponent);
+//maybe do a switch?
+$("#attack").on("click", function() {
+    if(opponentReady === true){
+    chosenOpponent.HP -= chosenCharacter.atkPwr;
+
+console.log(chosenOpponent);
+console.log(chosenCharacter);
 console.log(chosenOpponent.HP);
 $("div.defense").html(chosenOpponent.HP);
 console.log(chosenOpponent.HP);
-
-});}
-
-//Reset
+chosenCharacter.HP -= chosenOpponent.counterPwr;
+$("div.player").html(chosenCharacter.HP);
+$(".message").text("You hit  " + chosenOpponent.name + " for " + chosenCharacter.atkPwr + " damage and " + chosenOpponent.name + " hit you for " + chosenOpponent.counterPwr + " damage! ");
+chosenCharacter.atkPwr +=6;
+console.log(chosenCharacter.atkPwr);
+}
+else {
+    $("#attack").on("click", function(){
+        $(".message").text("No Opponent here!");
+})};
+console.log(chosenOpponent);
+if(chosenOpponent.HP <= 0) {
+    $(".message").text("Choose next Opponent!");
+    $("#defenderArea").empty(); //, 10000);  
+    $(".opponent").removeAttr("disabled", "false");
+    opponentReady = false;
+    chosenOpponent = "";
+    opponentsLeft -= 1;
+    console.log(opponentsLeft);
+}
+//temporary way to end game for win until rest of code is cleaned up and a new way presents itself.
+if(opponentsLeft <= 0){
+   
+    $(".message").text(
+        "You Win! \n Press Reset Button to play again!");
+    $("#attack").attr("disabled", "true");
+    gameOver = true;
+}
+if(chosenCharacter.HP <= 0) {
+    $(".message").text(
+        "You Lose! \n Press Reset Button to play again!");
+    $("#attack").attr("disabled", "true");
+    $(".player").text("0");
+    gameOver = true;
+}
+});
+$("#reset").on("click", function(){
+restart();
+});
+function restart(){
+ $(".available").css("display", "block");
+ playerReady = false;
+ opponentReady = false;
+ chosenOpponent = ""; 
+ opponentsLeft = 3;
+ gameOver = false;
+ console.log(gameOver);
+}
+//ResetopponentReady = false;
 
 });
