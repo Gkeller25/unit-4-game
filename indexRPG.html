@@ -5,10 +5,10 @@
     <title>Star Wars RPG Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery.js"></script>
+    
 </head>
 <body>
 
@@ -32,168 +32,177 @@
                     <div><h1>Your Character</h1></div>
 <!--Selection Area-->
                     <div class="container-fluid d-flex flex-row" id="activePlayer">
-                        <div class="col-2" id="playerChewie">
+                        <div class="col-2 available" id="playerChewie">
                             <div class="card text-center">
-                                <div class="card-header" id="chewieFnSel">
-                                        
+                                <div class="card-header " id="chewieFnSel">
+                                  <p class="p-0 m-0">Chewbacca</p>     
                                 </div>
 
                                 <button class="p-0 character" id="chewie-select">                                   
                                 <img class="card-img" src="assets/images/Chewie.jpg" alt="Card image cap"> 
                                 </button> 
 
-                                <div class="card-footer text-muted player" id="chewieHpSel">
-                                        
+                                <div class="card-footer text-muted player " id="chewieHpSel">
+                                      130  
                                 </div>
                             </div>
                         </div>
-                        <div class="col-2" id="playerLuke">
+
+
+                        <div class="col-2 available" id="playerLuke">
                             <div class="card text-center">
-                                <div class="card-header" id="lukeFnSel">
-                                        
+                                <div class="card-header " id="lukeFnSel">
+                                        <p class="p-0 m-0">Luke Skywalker</p>     
                                 </div>
                                 <button class="p-0 character" id="luke-select">        
                                 <img class="card-img" src="assets/images/Luke-Skywalker.jpg" alt="Card image cap">
                                 </button>      
-                                <div class="card-footer text-muted player" id="lukeHpSel">
-                                        
+                                <div class="card-footer text-muted player " id="lukeHpSel">
+                                       160 
                                 </div>
                             </div>
                         </div>
-                        <div class="col-2" id="playerYoda">
+                        <div class="col-2 available" id="playerYoda">
                             <div class="card text-center">
-                                <div class="card-header" id="yodaFnSel">
-                                        
+                                <div class="card-header " id="yodaFnSel">
+                                        <p class="p-0 m-0">Yoda</p>  
                                 </div>
                                 <button class="p-0 character" id="yoda-select">   
                                 <img class="card-img" src="assets/images/Yoda.jpg" alt="Card image cap">
                                 </button>      
-                                <div class="card-footer text-muted player" id="yodaHpSel">
-                                       
+                                <div class="card-footer text-muted player " id="yodaHpSel">
+                                    180   
                                 </div>
                             </div>
                         </div>
-                        <div class="col-2" id="playerDooku">
+
+
+                        <div class="col-2 available" id="playerDooku">
                             <div class="card text-center">
-                                <div class="card-header" id="dookuFnSel">
-                                        
+                                <div class="card-header " id="dookuFnSel">
+                                        <p class="p-0 m-0">Count Dooku</p>  
                                 </div>
                                 <button class="p-0 character" id="dooku-select">        
                                 <img class="card-img" src="assets/images/Dooku.jpg" alt="Card image cap">
                                 </button>     
-                                <div class="card-footer text-muted player" id="dookuHpSel">
-                                        
+                                <div class="card-footer text-muted player " id="dookuHpSel">
+                                        130
                                 </div>
                             </div>
                         </div>
-                        <div class="col-2" id="playerVader">
+
+
+                        <div class="col-2 available" id="playerVader">
                             <div class="card text-center">
-                                <div class="card-header" id="vaderFnSel">
-                                        
+                                <div class="card-header " id="vaderFnSel">
+                                        <p class="p-0 m-0">Darth Vader</p>  
                                 </div>
                                 <button class="p-0 character" id="vader-select">    
                                 <img class="card-img" src="assets/images/Vader.jpg" alt="Card image cap">
                                 </button>
-                                <div class="card-footer text-muted player" id="vaderHpSel">
-                                       
+                                <div class="card-footer text-muted player  " id="vaderHpSel">
+                                       160
                                 </div>
                             </div>
                         </div>
-                        <div class="col-2 emperor" id="playerEmperor">
+
+
+                        <div class="col-2 available" id="playerEmperor">
                             <div class="card text-center">
-                                <div class="card-header" id="emperorFnSel">
-                                        
+                                <div class="card-header " id="emperorFnSel">
+                                        <p class="p-0 m-0">Emperor Palpatine</p>  
                                 </div>
                                 <button class="p-0 character" id="emperor-select">     
                                 <img class="card-img" src="assets/images/Palpatine.jpg" alt="Card image cap">
                                 </button>
-                                <div class="card-footer text-muted player" id="emperorHpSel">
-                                        
+                                <div class="card-footer text-muted player " id="emperorHpSel">
+                                        180
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
 
+
+                <div class="row">
                     <div><h1>Opponents Available to Attack</h1></div>
 <!--Opponent Selection-->
                     <div class="container-fluid d-flex flex-row" id="opponents">
-                            <div class="col-2" id="defenderChewie" style="display:none">
-                                <div class="card text-center">
-                                    <div class="card-header" id="chewieFnOp">
-                                            
+                            <div class="col-2 enemiesLight" id="defenderChewie" style="display:none">
+                                <div class="card defender text-center">
+                                    <div class="card-header " id="chewieFnOp">
+                                            <p class="p-0 m-0">Chewbacca</p>     
                                     </div>  
                                     <button class="p-0 opponent" id="chewie-opponent">
                                     <img class="card-img" src="assets/images/Chewie2.jpg" alt="Card image cap">    
                                     </button>
-                                    <div class="card-footer text-muted" id="chewieHpOp">
-                                            
+                                    <div class="card-footer text-muted " id="chewieHpOp">
+                                            130
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-2" id="defenderLuke" style="display:none">
-                                <div class="card text">
-                                    <div class="card-header" id="lukeFnOp">
-                                            
+                            <div class="col-2 enemiesLight" id="defenderLuke" style="display:none">
+                                <div class="card defender text">
+                                    <div class="card-header " id="lukeFnOp">
+                                            <p class="p-0 m-0">Luke Skywalker</p>  
                                     </div>
                                     <button class="p-0 opponent" id="luke-opponent">      
                                     <img class="card-img" src="assets/images/Luke-Skywalker2.jpg" alt="Card image cap">
                                     </button>       
-                                    <div class="card-footer text-muted" id="lukeHpOp">
-                                            
+                                    <div class="card-footer text-muted " id="lukeHpOp">
+                                            160
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-2" id="defenderYoda" style="display:none">
-                                <div class="card text">
-                                    <div class="card-header" id="yodaFnOp">
-                                            
+                            <div class="col-2 enemiesLight" id="defenderYoda" style="display:none">
+                                <div class="card defender text">
+                                    <div class="card-header " id="yodaFnOp">
+                                            <p class="p-0 m-0">Yoda</p>  
                                     </div>
                                     <button class="p-0 opponent" id="yoda-opponent"> 
                                     <img class="card-img" src="assets/images/Yoda2.jpg" alt="Card image cap">
                                     </button>      
-                                    <div class="card-footer text-muted" id="yodaHpOp">
-                                           
+                                    <div class="card-footer text-muted " id="yodaHpOp">
+                                           180
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-2" id="defenderDooku" style="display:none">
-                                <div class="card text-center">
-                                    <div class="card-header" id="dookuFnOp">
-                                            
+                            <div class="col-2 enemiesDark" id="defenderDooku" style="display:none">
+                                <div class="card defender text-center">
+                                    <div class="card-header " id="dookuFnOp">
+                                            <p class="p-0 m-0">Count Dooku</p>  
                                     </div>
                                     <button class="p-0 opponent" id="dooku-opponent">      
                                     <img class="card-img" src="assets/images/Dooku2.jpg" alt="Card image cap">
                                     </button>      
-                                    <div class="card-footer text-muted" id="dookuHpOp">
-                                            
+                                    <div class="card-footer text-muted " id="dookuHpOp">
+                                            130
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-2" id="defenderVader" style="display:none">                                
-                                <div class="card text-center">
-                                    <div class="card-header" id="vaderFnOp">
-                                            
+                            <div class="col-2 enemiesDark" id="defenderVader" style="display:none">                                
+                                <div class="card defender text-center">
+                                    <div class="card-header " id="vaderFnOp">
+                                            <p class="p-0 m-0">Darth Vader</p>  
                                     </div>
                                     <button class="p-0 opponent" id="vader-opponent">
                                     <img class="card-img"  src="assets/images/Vader2.jpg" alt="Card image cap">
                                     </button>
-                                    <div class="card-footer text-muted" id="vaderHpOp">
-                                           
+                                    <div class="card-footer text-muted " id="vaderHpOp">
+                                           160
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-2" id="defenderEmperor" style="display:none">
-                                <div class="card text-center">
-                                    <div class="card-header" id="emperorFnOp">
-                                            
+                            <div class="col-2 enemiesDark" id="defenderEmperor" style="display:none">
+                                <div class="card defender text-center">
+                                    <div class="card-header " id="emperorFnOp">
+                                            <p class="p-0 m-0">Emperor Palpatine</p>  
                                     </div>
                                     <button class="p-0 opponent" id="emperor-opponent">  
                                     <img class="card-img" src="assets/images/Palpatine2.jpg" alt="Card image cap">
                                     </button>
-                                    <div class="card-footer text-muted" id="emperorHpOp">
-                                            
+                                    <div class="card-footer text-muted " id="emperorHpOp">
+                                            180
                                     </div>
                                 </div>
                             </div>
@@ -202,7 +211,7 @@
 
             <div class="row">
                 <div><h1>Fight Section</h1></div>
-                    <button type="button" class="btn btn-primary" id="attack">Primary</button>
+                    <button type="button" class="btn btn-primary" id="attack">ATTACK</button>
             </div>
 
                 <div class="row">
@@ -216,6 +225,14 @@
                             </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="message"></p>
+                                </div>
+                                <div class="col-6">
+                                    <button type="button" class="btn btn-primary" id="reset">Reset Game</button>
+                                </div>
+                            </div>
                         </div>
                     
             
@@ -226,7 +243,8 @@
                     </div>
                 </footer>
 
-    <script src="assets/javascript/rpg.js"></script>  
+    <!--script src="assets/javascript/rpg.js"></script--> 
+    <script src="assets/javascript/test.js"></script> 
 </body>
 
 </html>
